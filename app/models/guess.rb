@@ -1,4 +1,4 @@
-class Guess < ActiveRecord::Base
+class Guess < ApplicationRecord
   belongs_to :user
   belongs_to :card
 end

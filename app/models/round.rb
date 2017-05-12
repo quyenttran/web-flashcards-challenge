@@ -1,4 +1,4 @@
-class Round < ActiveRecord::Base
+class Round < ApplicationRecord
   belongs_to :user
   belongs_to :deck
 end

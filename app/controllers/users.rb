@@ -21,6 +21,7 @@ end
 get '/users/:id' do
   erb :'users/login' unless session[:id]
   @user = User.find(params[:id])
+  @round = Round.find_or_create_by(user_id: params[:id])
   erb :'users/stats'
 end
 
@@ -51,7 +52,7 @@ end
 
 put '/users/:id' do
   @user = User.find(params[:id])
-  @user.assign_attributes(params[:user])
+  @user.update_attributes(params[:user])
   @user.password=(params[:user][:password])
   @user.save
   redirect "/users/#{@user.id}"
