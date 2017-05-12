@@ -4,10 +4,12 @@ end
 
 post '/users/login' do
   @user = User.find_by(username: params[:user][:username])
-  if @user.authenticate(params[:user][:passsword])
+  if @user && @user.authenticate(params[:user][:password])
+    session[:id] = @user.id
     redirect :"/users/#{@user.id}/profile"
   else
-    erb :'user/login'
+    @errors = "Username and password did not match"
+    erb :'users/login'
   end
 end
 
