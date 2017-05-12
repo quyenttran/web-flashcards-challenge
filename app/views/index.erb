@@ -1,10 +1,11 @@
 <div>
-<% if !logged_in? %>
-<h2> Sign Up or Log In to play flashcards! </h2>
-<% end %>
-<ul>
-<% @decks.each do |deck| %>
-<li> <%= deck %> </li>
-<% end %>
-</ul>
+  <% if !logged_in? %>
+    <h2> Sign Up or Log In to play flashcards! </h2>
+  <% end %>
+
+  <ul>
+    <% @decks.each do |deck| %>
+      <li> <%= deck %> </li>
+    <% end %>
+  </ul>
 </div>
