@@ -1,13 +1,14 @@
 <h1> Enter New User Information</h1></br>
   <% if @errors %>
-  <% @errors.each do |error| %>
-  <%= error %>
+    <% @errors.each do |error| %>
+      <%= error %>
+    <% end %>
   <% end %>
-  <% end %>
+
 <form action='/users' method="post">
-<label>Username: </label>
-<input type="text" name="user[username]"></br>
-<label>Password: </label>
-<input type="password" name="user[password]"></br>
-<input type="submit" style="color:green;">
+  <label>Username: </label>
+  <input type="text" name="user[username]"></br>
+  <label>Password: </label>
+  <input type="password" name="user[password]"></br>
+  <input type="submit" style="color:green;">
 </form>
