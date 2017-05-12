@@ -1,4 +1,4 @@
-class Deck < ActiveRecord::Base
+class Deck < ApplicationRecord
   validates :name, presence: true
 
   has_one :rounds
