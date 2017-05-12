@@ -1,0 +1,24 @@
+body {
+  margin-top: 100px;
+}
+#fixbar {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  text-align: right;
+  width: 100%;
+  opacity: .98;
+  background: linear-gradient(to bottom right, #455A64, #607D8B);
+  color: #FFF;
+  padding: 20px;
+  display: inline;
+  letter-spacing: 3px;
+}
+#fixbar a {
+  color: #fff;
+}
+.title-bar {
+  position: fixed;
+  display: inline;
+  left: 20px;
+}
