@@ -1,0 +1,11 @@
+<div>
+  <h2><%=@deck.name%></h2>
+  <h4><%=@card.question%></h4>
+  <form action="/decks/:id/card/:card_name" method="POST">
+    Enter your guess here:
+    <input type="text" name="answer">
+    <input type="submit" name="submit">
+  </form>
+
+
+</div>
