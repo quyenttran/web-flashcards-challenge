@@ -1,4 +1,4 @@
-class User < ActiveRecord::Base
+class User < ApplicationRecord
   validates :name, :email, :hashword, { presence: true }
   validates :email, uniqueness: true, format: { with: /\w+@\w+\.\w+/  }
 
