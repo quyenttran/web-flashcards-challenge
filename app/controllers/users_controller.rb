@@ -9,7 +9,7 @@ end
 # Create - create new user
 post '/users/new' do
   # Create new user with post data
-  user = User.create(params['user'])
+  @user = User.create(params['user'])
   # Log in user
   session['user_id'] = user.id
   redirect to "/users/#{user.id}"
@@ -30,6 +30,7 @@ post '/users/login' do
     redirect to '/'
   else
     # Bounce back to login
+    @message = 'Something went wrong!'
     redirect to '/users/login'
   end
 end
