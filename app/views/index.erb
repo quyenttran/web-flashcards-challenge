@@ -1,1 +1,8 @@
 <h1>falshcards</h1>
+<div class="container">
+<% @decks.each do |deck| %>
+<span id="profile-tile">
+<a href="/decks/<%= deck.id%>"><%= deck.name %></a>
+</span>
+<% end %>
+</div>

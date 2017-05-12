@@ -22,7 +22,7 @@
   <div class="title-bar">falshcards</div>
     <a href="/" id="link">Home</a> |
     <% if logged_in? %>
-      <a href="/users/<%= session[:id] %>" id="link">Profile</a> |
+      <a href="/users/<%=session[:id]%>/profile" id="link">Profile</a> |
       <a href="/logout" id="link">Logout</a>
     <% else %>
       <a href="/login" id="link">Login</a> |

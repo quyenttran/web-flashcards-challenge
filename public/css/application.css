@@ -22,3 +22,22 @@ body {
   display: inline;
   left: 20px;
 }
+.container {
+  border: 5px;
+  margin: auto;
+  padding: 50px;
+  text-align: center;
+}
+#profile-tile {
+  padding: 1vw;
+  margin: 1vw;
+  width: 33%;
+  height: 130px;
+  border: 3px solid #ECEFF1;
+  border-radius: 4px;
+  float: left;
+  position: relative;
+}
+h1 {
+  text-align: center;
+}
