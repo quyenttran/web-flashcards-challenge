@@ -1,0 +1,6 @@
+<%= @errors unless @errors.nil? %>
+<form action='/users/login' method='post'>
+<input type="text" name="user[username]">
+<input type="password" name="user[password]">
+<input type="submit">
+</form>
