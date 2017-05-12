@@ -7,8 +7,6 @@ get '/login' do
 end
 
 post '/login' do
-  puts "******************************************"
-  puts params
   @user = User.find_by(name: params[:user][:name])
   if @user.authenticate(params[:user][:password])
     session[:id] = @user.id
@@ -22,12 +20,6 @@ get '/users/:id' do
   erb :'users/login' unless session[:id]
   @user = User.find(params[:id])
   @round = Round.find_or_create_by(user_id: params[:id])
-  erb :'users/stats'
-end
-
-get '/users/:id/profile' do
-  erb :'users/login' unless session[:id]
-  @user = User.find(params[:id])
   erb :'users/profile'
 end
 
