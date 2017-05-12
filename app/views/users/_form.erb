@@ -1,0 +1,24 @@
+<% if logged_in? %>
+  <form action="/users/<%= user.id %>" method="post">
+  <input type="hidden" name="_method" value="put" />
+<% else %>
+  <form action="/login" method="post">
+<% end %>
+
+  <div class="fieldset">
+    <label for="name_input">Full Name:</label>
+    <input type="text" name="user[name]" placeholder="<%= user.name%>">
+  </div>
+
+  <div class="fieldset">
+    <label for="email_input">Email:</label>
+    <input type="text" name="user[email]" placeholder="<%= user.email %>">
+  </div>
+
+  <div class="fieldset">
+    <label for="password_input">Password:</label>
+    <input type="text" name="user[password]" placeholder"************">
+  </div>
+
+  <input type="submit" value="submit">
+</form>
