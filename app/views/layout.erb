@@ -19,7 +19,11 @@
 </head>
 <body>
 <h1> Flashcards </h1>
-  <%=  %>
+  <% if logged_in? %>
+  <%= erb :'_navin' %>
+  <% else %>
+  <%= erb :'_navout' %>
+  <% end %>
   <%= yield %>
 </body>
 </html>
