@@ -1,4 +1,4 @@
-helpers do
+module HelpersForUser
 
   def current_user
     @current_user ||= User.find_by(id: session[:id])
@@ -26,3 +26,6 @@ helpers do
   end
 
 end
+
+
+helpers HelpersForUser
