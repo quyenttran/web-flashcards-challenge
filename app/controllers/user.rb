@@ -18,6 +18,7 @@ end
 get '/users/logout' do
   session.delete(:id)
   erb :'index'
+end
 
 get '/users/login' do
   erb :'users/login'
