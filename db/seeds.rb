@@ -16,3 +16,7 @@ answer: "insects", deck_id: deck.id},
 nighthawk.each do |card|
   Card.create(card)
 end
+
+qyen = {username: 'qyen', hashed_password: 'abcdefg'}
+
+User.create(qyen)
