@@ -1,6 +1,9 @@
 <!-- Display any errors -->
-<% = @message %>
-
+<ul>
+<% @messages.each do |message| %>
+  <li><%= message %></li>
+<% end %>
+</ul>
 <!-- Login form -->
 <form class="user-form" action="/users/login" method="post">
   <label>Username</label>

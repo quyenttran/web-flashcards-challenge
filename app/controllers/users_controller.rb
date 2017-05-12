@@ -11,8 +11,13 @@ post '/users/new' do
   # Create new user with post data
   @user = User.create(params['user'])
   # Log in user
-  session['user_id'] = user.id
-  redirect to "/users/#{user.id}"
+  if @user.valid?
+    session['user_id'] = user.id
+    redirect to "/users/#{user.id}"
+  else
+    @messages = @user.errors.full_messages
+    redirect to '/users/login'
+  end
 end
 
 # Misc: Login(new) - display login form

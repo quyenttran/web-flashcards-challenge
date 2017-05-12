@@ -26,8 +26,8 @@
     <nav class="navbar">
       <ul class="navbar-ul flex-row">
         <% if session['user_id'] %>
-<!--         <li class="navbar-li"><a class="navbar-link" href="/users/<%= session['user_id'] %>"><%= (User.find_by(id: session['user_id'])).username %></a></li>
- -->        <li class="navbar-li">
+         <li class="navbar-li"><a class="navbar-link" href="/users/<%= session['user_id'] %>"><%= (User.find_by(id: session['user_id'])).username %></a></li>
+        <li class="navbar-li">
           <form method="post" action="/users/<%= session['user_id'] %>">
             <input type="hidden" name="_method" value="delete">
             <button class="logout-btn navbar-link"><%= "log out" %></button>
@@ -45,5 +45,4 @@
     <%= yield %>
   </div>
 </body>
-
 </html>

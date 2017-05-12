@@ -56,4 +56,5 @@ usa_historical_capitals_cards.each do |card|
   Card.create(card)
 end
 
-
+# Create the first user
+User.create(username: "first_user", password: "password")
