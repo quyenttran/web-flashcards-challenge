@@ -35,7 +35,16 @@ post '/users/login' do
 end
 
 get '/users/:id/profile' do
-  @user = User.find(params[:id])
-  erb :'users/profile'
+  if session[:id] != params[:id].to_i
+    redirect '/raise404'
+  else
+    @user = User.find(params[:id])
+    erb :'users/profile'
+  end
+end
+
+get '/raise404' do
+  status 404
+  erb :'404', layout: false
 end
 
