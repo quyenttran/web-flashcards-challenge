@@ -1,4 +1,3 @@
-
 get "/users/new" do
   @user = User.new
   erb :'users/new'
@@ -17,7 +16,8 @@ end
 
 get '/users/logout' do
   session.delete(:id)
-  erb :'index'
+  redirect '/'
+end
 
 get '/users/login' do
   erb :'users/login'
@@ -38,3 +38,4 @@ get '/users/:id/profile' do
   @user = User.find(params[:id])
   erb :'users/profile'
 end
+
