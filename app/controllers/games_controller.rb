@@ -28,8 +28,8 @@ end
 
 post '/cards/:id/guesses' do
   @guess = Guess.create(round_id: session['round_id'], card_id: params[:id], guess: params[:guess])
-  @correct_answer = Card.find(params[:id]).answer
-  if @guess.correct?(params[:guess], @correct_answer)
+  @card = Card.find(params[:id])
+  if @guess.correct?(params[:guess], @card.answer)
     redirect to :"/cards/#{params[:id]}/success"
   else
     redirect to :"/cards/#{params[:id]}/fail"
@@ -37,10 +37,12 @@ post '/cards/:id/guesses' do
 end
 
 get '/cards/:id/success' do
+  @card = Card.find(params[:id])
   erb :'/cards/success'
 end
 
 get '/cards/:id/fail' do
+  @card = Card.find(params[:id])
   erb :'/cards/fail'
 end
 
