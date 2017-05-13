@@ -10,7 +10,7 @@ th, td {
 }
 </style>
 
-<% @user.decks_played.each do |deck| %>
+<% @user.decks_played.distinct.each do |deck| %>
   <% @rounds_for_deck = deck.rounds.where(user_id: session[:id], deck_id: deck.id) %>
   <h3><%= deck.name %></h3>
   <table class="stats">
