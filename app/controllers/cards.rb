@@ -1,17 +1,28 @@
-get '/round/:id/deck/:id/card/:id' do 
-	puts params
+get '/cards' do
+	@cards = Card.all.order(:id)
+	erb :'cards/index'
+end
+
+get '/cards/:id' do
 	@card = Card.find(params[:id])
+	erb :'cards/show'
+end
+
+get '/round/:round_id/card/:card_id' do
+	puts params
 	@deck = Deck.find(params[:id])
+	@card = Card.find(params[:id])
+
 	erb :'cards/show'
 end
 
 
-post '/round/:id/card/:id' do
+post '/round/:round_id/card/:card_id' do
 	@round = Round.find_by(params[:id])
 	#find or create guess
 	@guess = Guess.create(user_id: session[:id], card_id: params[:id])
 	if @guess == card.answer
-		redirect 'round/:id/card/:id'
+		redirect 'round/:round_id/card/:card_id'
 	else
 		erb :'cards/show'
 	end

@@ -1,8 +1,10 @@
 <h1><%= @user.name.split.first %>'s Statistics</h1>
-
-<span class="entry-date block font-3-4 c-lt-gray"><%= "Account created on #{long_form_date(@user.created_at)}." %></span>
 <a href="/users/<%= @user.id %>/edit">Change Personal Information</a>
-
+<span class="entry-date block font-3-4 c-lt-gray"><%= "Account created on #{long_form_date(@user.created_at)}" %></span>
+<a href="/cards">Brush Up On Chuck Norris</a>
+<br>
+<img src="http://www.sickchirpse.com/wp-content/uploads/2016/09/Chuck-Norris.jpg" alt="Profile">
+<br>
 <table class="tg">
   <tr>
     <th class="tg-87ym">Date</th>
@@ -19,4 +21,3 @@
     <td class="tg-ixdi">user.round.guesses</td>
   </tr>
 </table>
-

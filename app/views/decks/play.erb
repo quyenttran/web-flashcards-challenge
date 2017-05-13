@@ -1,3 +1,3 @@
-<%= erb :"_scoreboard" %>
+<%= erb :"_scoreboard", locals: {user: @user, deck: @deck, round: @round} %>
 
 <%= erb :"cards/show" %>

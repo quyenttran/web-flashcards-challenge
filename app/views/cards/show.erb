@@ -1,19 +1,14 @@
-<h1>Falshcards</h1>
-
-<h2><%= @deck.name %></h2>
-
-<p><%= @card.question %></p> 
-
-<form action="<%= @card.id + 1 %>" method="post">
+<img src="http://cache.reelz.com/assets/content/blogimages/chucknorris-MIA2.jpg">
+<div class="card"
+<h2><%= @card.deck.name %></h2>
+<p><%= @card.question %></p>
   <% if @card.persisted? %>
-    <input type="hidden" name="_method" value="put" />
+  <form action="/decks/<%= @card.deck_id %>/cards/<%= @card.id %>" method="post">
+ <!--    <input type="hidden" name="_method" value="put" /> -->
+    <% else %>
+    <form action="/cards/<%= @card.id + 1 %>" method="get">
   <% end %>
-
-  <div class="fieldset">
-    <label for="title_input">Title:</label>
-    <input type="text" name="card[title]" placeholder="<%= @card.question %>">
-  </div>
-
-    
+  <input type="text" name="guess" placeholder="true/false">
   <input type="submit">
 </form>
+</div>
