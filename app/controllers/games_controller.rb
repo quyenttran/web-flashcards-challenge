@@ -7,9 +7,9 @@ get '/game/end' do
   erb :'game/results'
 end
 
-get '/game/start' do
+get '/game/start/:id' do
   #need to replace deck_id and user_id with dynamic values
-  @round = Round.create(deck_id: 1, user_id: 1)
+  @round = Round.create(deck_id: params[:id], user_id: 1)
   session['round_id'] = @round.id
 
   erb :'game/start'
