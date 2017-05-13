@@ -1,7 +1,8 @@
-get '/round/:round_id/card/:card_id' do
+get '/round/:round_id/card/:card_id' do 
 	puts params
-	@deck = Deck.find(1)
-	@card = Card.find(1)
+	@deck = Deck.find(params[:id])
+	@card = Card.find(params[:id])
+
 	erb :'cards/show'
 end
 
