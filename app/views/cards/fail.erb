@@ -1,2 +1,3 @@
-<p>Wrong! The answer is <%= Card.find(session['card_id']).answer %>.</p>
+<p>Wrong! The answer is <%= @card.answer %>.</p>
+<br>
 <a href='/game/show'>Continue</a>

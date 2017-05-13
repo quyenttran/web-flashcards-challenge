@@ -3,7 +3,7 @@
     <h1>Flashcard Decks</h1>
     <ul>
     <% @decks.each do |deck| %>
-      <li><a href='/game/start'>
+      <li><a href='/game/start/<%= deck.id %>'>
         <%= deck.name.capitalize %>
       </a></li>
     <% end %>
