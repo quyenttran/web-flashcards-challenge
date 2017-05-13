@@ -26,14 +26,21 @@ get '/game/show' do
   erb :'/game/show'
 end
 
-#not able to instantiate a guess anymore for some reason..
-post '/cards/guess' do
-  @guess = Guess.create(:guess)
-  @correct_answer = Card.find(session['card_id']).answer
+post '/cards/:id/guesses' do
+  @guess = Guess.create(round_id: session['round_id'], card_id: params[:id], guess: params[:guess])
+  @correct_answer = Card.find(params[:id]).answer
   if @guess.correct?(params[:guess], @correct_answer)
-    redirect to '/cards/success'
+    redirect to :"/cards/#{params[:id]}/success"
   else
-    redirect to '/cards/fail'
+    redirect to :"/cards/#{params[:id]}/fail"
   end
+end
+
+get '/cards/:id/success' do
+  erb :'/cards/success'
+end
+
+get '/cards/:id/fail' do
+  erb :'/cards/fail'
 end
 
