@@ -1,7 +1,7 @@
 <div>
   <h2><%=@deck.name%></h2>
   <h4><%=@card.question%></h4>
-  <form action="/decks/<%=@deck.id%>/play/<%=@card.id%>" method="get">
+  <form action="/decks/<%=@deck.id%>/play/<%=@card.id.to_i + 1%>" method="get">
     Enter your guess here:
     <input type="text" name="answer">
     <input type="hidden" name="round_id" value=<%= "#{@current_round.id}" %>>
