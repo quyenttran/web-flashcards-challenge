@@ -7,3 +7,6 @@ class CreateDecks < ActiveRecord::Migration[5.0]
     end
   end
 end
+
+
+#Did we update the decks to match our schema?
