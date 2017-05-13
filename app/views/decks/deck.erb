@@ -1,5 +1,8 @@
 <h1><%= @deck.name %></h1>
-<!-- <a href="/decks/<%= @deck.id%>/play">Start a round</a>
- -->
-
- <a href="/round/:round_id/card/:card_id">Start Round!</a>
+<% if logged_in? %>
+ <p><a href="/decks/<%= @deck.id %>/cards/<%= @card.id %>">Start Round!</a></p>
+ <img src="https://static.comicvine.com/uploads/original/3/31265/1550715-chuck_norris_2.jpg" alt="Start">
+ <% else %>
+ <p>"Login or Register. I aint askin"</p>
+ <img src="http://vignette2.wikia.nocookie.net/uncyclopedia/images/d/dc/Chuck-norris-002.jpg/revision/latest?cb=20080312162141" alt="Halt">
+ <% end %>
