@@ -1,5 +1,14 @@
+
+
 <!-- Registration form -->
 <form class="user-form" action="/users/new" method="post">
+  <ul>
+    <% if @messages %>
+      <% @messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    <% end %>
+  </ul>
   <label>Username</label>
   <input type="text" name="user[username]">
   <label>Password</label>

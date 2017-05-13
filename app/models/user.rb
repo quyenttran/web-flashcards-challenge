@@ -4,9 +4,9 @@ class User < ApplicationRecord
   # Remember to create a migration!
   include BCrypt
   has_many :games
-  validates :username, :hashed_password, {presence: true}
-  validates :username, { uniqueness: true }
-  validate :check_password_length
+  validates :username, :hashed_password, { presence: true }
+  validates :username, { uniqueness: true, length: { minimum: 3 } }
+  validate :password_presence
 
   def password
     @password ||= Password.new(hashed_password)
@@ -22,9 +22,12 @@ class User < ApplicationRecord
     @user.password == password ? true : false
   end
 
-  def check_password_length
-    if password.length <= 5
-      errors.add(:password, 'must be at least 6 characters long!')
-    end
+  private
+  def password_presence
+    errors.add(:password, 'cannot be blank') if password_blank?
+  end
+
+  def password_blank?
+    self.password == ''
   end
 end

@@ -16,7 +16,7 @@ post '/users/new' do
     redirect to "/users/#{user.id}"
   else
     @messages = @user.errors.full_messages
-    redirect to '/users/login'
+    erb :'/users/index'
   end
 end
 
@@ -35,7 +35,7 @@ post '/users/login' do
     redirect to '/'
   else
     # Bounce back to login
-    @message = 'Something went wrong!'
+    @messages = 'Something went wrong!'
     redirect to '/users/login'
   end
 end
