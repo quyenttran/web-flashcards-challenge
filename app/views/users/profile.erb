@@ -1,11 +1,11 @@
-<h1>Welcome, <%= @user.username %></h1>
+<h1 id="profile-username"><%= @user.username.capitalize %> Statistics</h1>
 <% @users_round = @user.rounds %>
 
 
 <% @user.decks_played.distinct.each do |deck| %>
 <div class="profile-stats">
   <% @rounds_for_deck = deck.rounds.where(user_id: session[:id], deck_id: deck.id) %>
-  <h3 class="deck-name"><%= deck.name %></h3>
+  <h2 class="deck-name"><%= deck.name.upcase %></h2>
   <table class="stats">
     <tr>
       <th>Date</th>
