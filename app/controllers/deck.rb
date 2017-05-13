@@ -24,8 +24,10 @@ get '/decks/:id/play/:card_id' do
       @current_round.save
      end
    end
+  #BREAKING BECAUSE IT KEEPS ON INCREMENTING IN THE FIRST IF LOOP
   if params[:card_id].to_i <= current_deck.cards.count
-    erb :'decks/play'
+    redirect "/decks/#{params[:id]}/play/#{params[:card_id].to_i + 1}?round_id=#{@current_round.id}"
+    # erb :'decks/play'
   elsif @correct_cards >= current_deck.cards.length
     redirect "/decks/#{current_deck.id}/complete/#{@current_round.id}"
   else
