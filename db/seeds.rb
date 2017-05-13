@@ -32,51 +32,51 @@ decks = [
 cards = [
   {
     question: Faker::ChuckNorris.unique.fact,
-    answer: true
+    answer: 'true'
   },
   {
     question: Faker::ChuckNorris.unique.fact,
-    answer: true
+    answer: 'true'
   },
   {
     question: Faker::ChuckNorris.unique.fact,
-    answer: true
+    answer: 'true'
   },
   {
     question: Faker::ChuckNorris.unique.fact,
-    answer: true
+    answer: 'true'
   },
   {
     question: Faker::ChuckNorris.unique.fact,
-    answer: true
+    answer: 'true'
   },
   {
     question: Faker::ChuckNorris.unique.fact,
-    answer: true
+    answer: 'true'
   },
     {
     question: Faker::ChuckNorris.unique.fact,
-    answer: true
+    answer: 'true'
   },
   {
     question: Faker::ChuckNorris.unique.fact,
-    answer: true
+    answer: 'true'
   },
   {
     question: Faker::ChuckNorris.unique.fact,
-    answer: true
+    answer: 'true'
   },
   {
     question: Faker::ChuckNorris.unique.fact,
-    answer: true
+    answer: 'true'
   },
   {
     question: Faker::ChuckNorris.unique.fact,
-    answer: true
+    answer: 'true'
   },
   {
     question: Faker::ChuckNorris.unique.fact,
-    answer: true
+    answer: 'true'
   }
 ]
 
@@ -87,4 +87,4 @@ Deck.create!(decks)
 Card.create!(cards)
 Card.where(id:1..4).each{|card| card.update_attributes(deck_id:1)}
 Card.where(id:5..8).each{|card| card.update_attributes(deck_id:2)}
-Card.where(id:5..8).each{|card| card.update_attributes(deck_id:3)}
+Card.where(id:9..12).each{|card| card.update_attributes(deck_id:3)}

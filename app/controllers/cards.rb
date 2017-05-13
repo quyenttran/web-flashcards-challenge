@@ -1,4 +1,14 @@
-get '/round/:round_id/card/:card_id' do 
+get '/cards' do
+	@cards = Card.all.order(:id)
+	erb :'cards/index'
+end
+
+get '/cards/:id' do
+	@card = Card.find(params[:id])
+	erb :'cards/show'
+end
+
+get '/round/:round_id/card/:card_id' do
 	puts params
 	@deck = Deck.find(params[:id])
 	@card = Card.find(params[:id])
