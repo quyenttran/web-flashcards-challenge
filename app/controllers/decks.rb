@@ -9,8 +9,12 @@ get '/decks/:id/play' do
   @round = Round.create(deck_id: params[:id], user_id: session[:id])
   @deck = Deck.find(params[:id])
   @user = User.find(session[:id])
-
-  erb :"decks/play"
+  # if @user.session == nil
+  # 	redirect '/decks/:id/play'
+  # else
+  # 	erb :"decks/play"
+  # end
+  erb :'decks/play'
 end
 
 get '/results' do
