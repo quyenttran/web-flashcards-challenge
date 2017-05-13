@@ -1,6 +1,7 @@
 get '/round/:round_id/card/:card_id' do 
-	@deck = Deck.find(session[:id])
-	@card = Card.find(session[:id])
+	puts params
+	@deck = Deck.find(params[:id])
+	@card = Card.find(params[:id])
 	erb :'cards/show'
 end
 
