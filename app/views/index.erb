@@ -5,7 +5,7 @@
 
   <ul>
     <% @decks.each do |deck| %>
-      <li> <%= deck.name %> </li>
+      <li><a href="/decks/<%=deck.id%>/preview"><%= deck.name %></a> </li>
     <% end %>
   </ul>
 </div>

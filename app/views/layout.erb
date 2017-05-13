@@ -22,6 +22,7 @@
   <% if logged_in? %>
   <%= erb :'_navin' %>
   <% else %>
+  <% session.delete(:id) %>
   <%= erb :'_navout' %>
   <% end %>
   <%= yield %>
