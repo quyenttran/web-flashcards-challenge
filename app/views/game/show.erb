@@ -1,9 +1,9 @@
 <main>
   <div id="container">
-    <h1><%= Deck.find(session['deck_id']).name.capitalize %> Trivia</h1>
-    <%= session['current_deck'].find { |card| card.id == (session['card_id'])}.question %>
+    <h1><%= Deck.find(session[:deck_id]).name.capitalize %> Trivia</h1>
+    <%= @question %>
     <p>Enter your guess:</p>
-    <form action='/cards/<%= session['card_id'] %>/guesses' method='post'>
+    <form action='/cards/<%= session[:card_id] %>/guesses' method='post'>
     <input type='text' name='guess'>
     <input type='submit' value='Submit your guess'>
     </form>

@@ -26,8 +26,8 @@ class Round < ApplicationRecord
    total
   end
 
-  def get_deck
-    self.deck.cards.dup.to_a
+  def get_deck_questions
+    self.deck.cards.map { |card| card.question }
   end
 
   def end_of_round?(correct_deck, wrong_deck, deck)
