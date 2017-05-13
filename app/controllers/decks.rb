@@ -24,8 +24,10 @@ post '/decks/:id/cards/:id' do
   if card.answer == guess.guess
     round.increment!(:score, by=1)
     round.increment!(:guess, by=1)
-    if Card.find(card.id+1).deck_id == deck.id
+    if Card.find(card.id+1).deck_id == deck.id 
       redirect "/decks/#{deck.id}/cards/#{card.id + 1}"
+    elsif card == Card.all.order(:id).last && card.answer == guess 
+    	redirect "/results"
     else
       redirect "/results"
     end
