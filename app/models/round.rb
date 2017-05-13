@@ -30,4 +30,10 @@ class Round < ApplicationRecord
     self.deck.cards.dup.to_a
   end
 
+  def end_of_round?(correct_deck, wrong_deck, deck)
+    return true if correct_deck.length + wrong_deck.length == deck.length
+    false
+  end
+
+
 end

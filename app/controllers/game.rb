@@ -1,24 +1,40 @@
-get '/games/show' do
-  #need to replace deck_id and user_id with dynamic values
-  @round = Round.create(deck_id: 1, user_id: 1)
-  session['deck_id'] = @round.deck_id
-  session['card_id'] = @round.deck.cards.shuffle.first.id
-  session['current_deck'] = @round.get_deck
-  session['correct_deck'] = []
-  session['wrong_deck'] = []
-  erb :'/games/show'
-end
+# get '/games/show' do
+#   #need to replace deck_id and user_id with dynamic values
+#   @round = Round.create(deck_id: 1, user_id: 1)
+#   session['round_id'] = @round.id
+#   session['deck_id'] = @round.deck_id
+#   session['card_id'] = @round.deck.cards.shuffle.first.id
+#   session['correct_deck'] = []
+#   session['wrong_deck'] = []
 
-get '/cards/:id' do
-  @guess = Guess.create(round_id: session['round_id'], card_id: session['card_id'], guess: params[:guess])
-  @correct_answer = Card.find(session['card_id']).answer
-  if @guess.correct?(params[:guess], @correct_answer)
-    session['correct_cards'] << session['deck'].destroy(session['deck'].find(session['card_id']))
-    erb :'/cards/success'
-  else
-    erb :'/cards/fail'
-  end
-end
+#   if @round.end_of_round?(session['correct_deck'], session['wrong_deck'], @round.get_deck)
+#     @round.count += 1
+#     @round[:first_round_corrects] = session['correct_deck'].length
+#   else
+#     if session['wrong_deck'].empty?
+#       session['current_deck'] = @round.get_deck
+#     elsif
+#       session['current_deck'] = session['wrong_deck']
+#       if session['current_deck'].empty?
+#         erb :'/games/finish'
+#       end
+#     end
+#   end
+#   erb :'/games/show'
+# end
+
+# get '/cards/:id' do
+#   @guess = Guess.create(round_id: session['round_id'], card_id: session['card_id'], guess: params[:guess])
+#   @correct_answer = Card.find(session['card_id']).answer
+#   # card = Card.find(session['card_id'])
+#   if @guess.correct?(params[:guess], @correct_answer)
+#     # session['correct_deck'] << session['current_deck'].delete(card)
+#     erb :'/cards/success'
+#   else
+#     # session['wrong_deck'] << session['current_deck'].delete(card)
+#     erb :'/cards/fail'
+#   end
+# end
 
 # user clicks on a deck
 # starts a game
