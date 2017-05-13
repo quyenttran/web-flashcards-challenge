@@ -11,4 +11,3 @@ get '/decks/:id/play' do
 
   erb :"decks/play"
 end
- 

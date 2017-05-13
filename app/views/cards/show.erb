@@ -2,3 +2,32 @@
 
 <h2><%= @deck.name %></h2>
 
+<!-- <p><%= @card.question %></p> -->
+
+<form action="<%= @card.id + 1 %>" method="post">
+  <% if card.persisted? %>
+    <input type="hidden" name="_method" value="put" />
+  <% end %>
+
+  <div class="fieldset">
+    <label for="title_input">Title:</label>
+    <input type="text" name="card[title]" placeholder="<%= card.title %>">
+  </div>
+
+  <div class="fieldset">
+    <label for ="body_input">Body:</label>
+    <textarea name="card[body]" placeholder="<%= card.body %>"></textarea>
+  </div>
+
+    <div class="fieldset">
+      <label for ="card[category_id]">Category:</label>
+      <select name="card[category_id]">
+        <% categories.each do |category| %>
+          <option value ="<%= category.id %>">
+          <%= category.name %>
+          </option>
+        <% end %>
+      </select>
+    </div>
+  <input type="submit">
+</form>
