@@ -16,19 +16,25 @@ get '/decks/:id/play/:card_id' do
   @deck = Deck.find_by(id: params[:id])
   @guess = Guess.create(card_id: params[:card_id], round_id: @current_round.id)
   @card = Card.find_by(id: params[:card_id])
-  @correct_cards = @current_round.played_cards.count - @current_round.incorrectly_guessed_cards.count
-  if params[:answer] == @card.answer
-     @guess.correct = 1
-     if @guess.first_try?
-      @current_round.first_tries += 1
-      @current_round.save
-     end
-   end
+  @correct_cards = [@current_round.played_cards - @current_round.incorrectly_guessed_cards]
+  puts "_________________________________"
+  puts @correct_cards
+  puts @deck.cards.count
+  puts @correct_cards.count
+  if @correct_cards.include?(@card)
+    redirect "/decks/#{params[:id]}/play/#{params[:card_id].to_i}?round_id=#{@current_round.id}"
+  end
   #BREAKING BECAUSE IT KEEPS ON INCREMENTING IN THE FIRST IF LOOP
   if params[:card_id].to_i <= current_deck.cards.count
-    redirect "/decks/#{params[:id]}/play/#{params[:card_id].to_i + 1}?round_id=#{@current_round.id}"
-    # erb :'decks/play'
-  elsif @correct_cards >= current_deck.cards.length
+    if params[:answer].downcase == @card.answer.downcase
+       @guess.correct = 1
+       if @guess.first_try?
+        @current_round.first_tries += 1
+        @current_round.save
+       end
+     end
+    erb :'decks/play'
+  elsif @correct_cards.count >= current_deck.cards.length
     redirect "/decks/#{current_deck.id}/complete/#{@current_round.id}"
   else
     redirect "/decks/#{current_deck.id}/play/1?round_id=#{@current_round.id}"
@@ -38,5 +44,5 @@ end
 
 get '/decks/:id/complete/:round_id' do
   @current_round = Round.find(params[:round_id])
-  erb :'decks/completed'
+  erb :'decks/complete'
 end
