@@ -30,7 +30,7 @@ post '/decks/:id/cards/:id' do
     if Card.find(card.id+1).deck_id == deck.id
       redirect "/decks/#{deck.id}/cards/#{card.id + 1}"
     else
-      redirect "/"
+      redirect "/results"
     end
   else
     # round.count += 1
@@ -41,5 +41,7 @@ end
 
 get '/results' do
   @user = User.find(session[:id])
+  @round = Round.find(session[:round_id])
   erb :"decks/results"
 end
+

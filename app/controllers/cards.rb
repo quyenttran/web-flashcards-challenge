@@ -12,6 +12,7 @@ get '/round/:round_id/card/:card_id' do
 	puts params
 	@deck = Deck.find(params[:id])
 	@card = Card.find(params[:id])
+
 	erb :'cards/show'
 end
 
