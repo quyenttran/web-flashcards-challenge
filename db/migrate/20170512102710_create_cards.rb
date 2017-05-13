@@ -4,7 +4,6 @@ class CreateCards < ActiveRecord::Migration[5.0]
       t.string :question, null: false
       t.string :answer, null: false
       t.integer :deck_id, null: false
-      t.integer :answered, null: false, default: 0
 
       t.timestamps(null: false)
     end
