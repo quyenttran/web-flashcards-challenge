@@ -5,7 +5,7 @@ class Game < ApplicationRecord
   has_many :rounds
 
   def get_deck
-    duplicate_deck = self.deck.cards
+    self.deck.cards.dup.to_a
   end
 
 

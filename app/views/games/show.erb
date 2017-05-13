@@ -1,7 +1,7 @@
 <main>
   <div id="container">
     <h1><%= @game.deck.name.capitalize %> Trivia</h1>
-    <%= @game.deck.cards.find(session['card_id']).question %>
+    <%= session['deck'].find { |card| card.id == (session['card_id'])}.question %>
     <p>Enter your guess:</p>
     <form action='/cards/:id' method='get'>
     <input type='textarea' name='guess'>
