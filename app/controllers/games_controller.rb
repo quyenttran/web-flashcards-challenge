@@ -19,13 +19,18 @@ get '/game/start/:id' do
 end
 
 get '/game/show' do
-  @round = Round.find(session[:round_id])
-  session[:question] = session[:current_deck].sample
-  session[:deck_id] = @round.deck.id
-  @card = Card.find_card_by_question(session[:question])
-  session[:card_id] = @card.id
+  if session[:current_deck].empty?
+    # if no more questions in current deck, directs user to status page
+    erb :'/game/end'
+  else
+    @round = Round.find(session[:round_id])
+    session[:question] = session[:current_deck].sample
+    session[:deck_id] = @round.deck.id
+    @card = Card.find_card_by_question(session[:question])
+    session[:card_id] = @card.id
 
-  erb :'/game/show'
+    erb :'/game/show'
+  end
 end
 
 post '/cards/:id/guesses' do
