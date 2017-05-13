@@ -1,4 +1,4 @@
-get '/round/:id/card/:id' do 
+get '/round/:id/deck/:id/card/:id' do 
 	puts params
 	@card = Card.find(params[:id])
 	@deck = Deck.find(params[:id])
