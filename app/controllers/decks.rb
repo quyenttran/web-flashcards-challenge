@@ -22,21 +22,17 @@ post '/decks/:id/cards/:id' do
   round = Round.find(session[:round_id])
   guess = Guess.create(guess: params[:guess])
   if card.answer == guess.guess
-    puts "****************"
-      puts round.inspect
-
-    round.score += 1
-    # round.count += 1
+    round.increment!(:score, by=1)
+    round.increment!(:guess, by=1)
     if Card.find(card.id+1).deck_id == deck.id
       redirect "/decks/#{deck.id}/cards/#{card.id + 1}"
     else
       redirect "/results"
     end
   else
-    # round.count += 1
+    round.increment!(:guess, by=1)
     redirect "/decks/#{deck.id}/cards/#{card.id}"
   end
-  # erb :'decks/play'
 end
 
 get '/results' do
