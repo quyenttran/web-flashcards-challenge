@@ -17,7 +17,7 @@
   <tr>
     <td class="tg-18qn"><%= item.created_at %></td>
     <td class="tg-ixdi"><%= Deck.find(item.deck_id).name %></td>
-    <td class="tg-ixdi">card</td>
+    <td class="tg-ixdi"><%= @cards %></td>
     <td class="tg-ixdi"><%= item.score %></td>
     <td class="tg-ixdi"><%= item.guess %></td>
   </tr>
