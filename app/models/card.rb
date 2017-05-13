@@ -6,6 +6,6 @@ class Card < ApplicationRecord
   scope :find_card, -> (question) { where('question = ?', question) }
 
   def self.find_card_by_question(question)
-    self.find_card(question).first.id
+    self.find_card(question).first
   end
 end
