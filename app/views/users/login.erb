@@ -1,7 +1,7 @@
 <% if logged_in? %>
   <p>EDIT YOUR INFORMATION</p>
 <% else %>
-  <p>REGISTER/LOGIN</p>
+  <p>LOGIN</p>
 <% end %>
 
 <%= erb :'users/_form', locals: { user: @user } %>

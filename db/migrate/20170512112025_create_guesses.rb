@@ -1,4 +1,4 @@
-class CreateGuesses < ActiveRecord::Migration
+class CreateGuesses < ActiveRecord::Migration[5.0]
   def change
     create_table :guesses do |t|
       t.integer :count, default: 0

@@ -16,25 +16,27 @@ post '/login' do
   end
 end
 
-get '/users/:id' do
-  erb :'users/login' unless session[:id]
-  @user = User.find(params[:id])
-  @round = Round.find_or_create_by(user_id: params[:id])
-  erb :'users/profile'
-end
-
 get '/users/new' do
   @user = User.new
-  erb :'users/login'
-  #same kind of form
+  erb :'users/new'
 end
 
 post '/users' do
   @user = User.new(params[:user])
   @user.password=(params[:user][:password])
-  @user.save
-  session[:id] = @user.id
-  redirect "/users/#{@user.id}"
+  if @user.save
+    session[:id] = @user.id
+    redirect "/users/#{@user.id}"
+  else
+    erb :'users/new_error'
+  end
+end
+
+get '/users/:id' do
+  erb :'users/login' unless session[:id]
+  @user = User.find(params[:id])
+  @round = Round.find_or_create_by(user_id: params[:id])
+  erb :'users/profile'
 end
 
 get '/users/:id/edit' do
