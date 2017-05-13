@@ -1,1 +1,32 @@
-<h1>Welcome, <%= @user.username %>
+<h1>Welcome, <%= @user.username %></h1>
+<% @users_round = @user.rounds %>
+
+<style>
+table, th, td {
+    border: 1px solid black;
+}
+th, td {
+  text-align: center;
+}
+</style>
+
+<% @user.decks_played.each do |deck| %>
+  <% @rounds_for_deck = deck.rounds.where(user_id: session[:id], deck_id: deck.id) %>
+  <h3><%= deck.name %></h3>
+  <table class="stats">
+    <tr>
+      <th>Date</th>
+      <th>Cards in Deck</th>
+      <th>First Guess Correct</th>
+      <th>Total Guesses</th>
+    </tr>
+      <% @rounds_for_deck.each do |round| %>
+    <tr>
+      <td><%= round.created_at.strftime("%D") %></td>
+      <td><%= round.deck.cards.count %></td>
+      <td><%= round.first_tries %></td>
+      <td><%= round.total_guesses %></td>
+    </tr>
+      <% end %>
+  </table>
+<% end %>

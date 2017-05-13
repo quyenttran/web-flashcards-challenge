@@ -3,6 +3,8 @@ require 'bcrypt'
 class User < ApplicationRecord
   has_many :rounds
   has_many :guesses, through: :rounds
+  has_many :decks_played, through: :rounds, source: :deck
+
   validates :username, :hashed_password, presence: true
   validates :username, uniqueness: true
   validate :password_is_not_blank
