@@ -33,12 +33,12 @@ post '/cards/:id/guesses' do
   @guess = Guess.create(round_id: session[:round_id], card_id: params[:id], guess: params[:guess])
   @card = Card.find(params[:id])
   if @guess.correct?(params[:guess], @card.answer)
-    @round.increment(:first_round_corrects, by = 1) until @round.all_rounds_guesses == session[:deck_length]
-    @round.increment(:total_guesses, by = 1)
-    # delete card from current deck
+    @round.increment!(:all_rounds_guesses, by = 1)
+    @round.increment!(:first_round_corrects, by = 1) unless @round.all_rounds_guesses == session[:deck_length]
+    session[:current_deck].delete(session[:question])
     redirect to :"/cards/#{params[:id]}/success"
   else
-    # increments total_guesses
+    @round.increment!(:all_rounds_guesses, by = 1)
     redirect to :"/cards/#{params[:id]}/fail"
   end
 end

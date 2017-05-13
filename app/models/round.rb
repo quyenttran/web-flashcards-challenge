@@ -26,12 +26,12 @@ class Round < ApplicationRecord
    total
   end
 
-  def get_deck_questions
-    self.deck.cards.map { |card| card.question }
-  end
-
   def end_of_round?(correct_deck, wrong_deck, deck)
     return true if correct_deck.length + wrong_deck.length == deck.length
     false
+  end
+
+  def get_deck_questions
+    self.deck.cards.map { |card| card.question }
   end
 end
