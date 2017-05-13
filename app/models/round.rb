@@ -1,4 +1,4 @@
 class Round < ApplicationRecord
-  belongs_to :user
+  has_many :guesses
   has_one :deck
 end

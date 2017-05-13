@@ -2,7 +2,6 @@ class User < ApplicationRecord
   validates :name, :email, :hashword, { presence: true }
   validates :email, uniqueness: true, format: { with: /\w+@\w+\.\w+/  }
 
-  has_many :guesses
   has_many :rounds
 
   def authenticate(password)
