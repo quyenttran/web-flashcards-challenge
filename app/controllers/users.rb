@@ -8,6 +8,7 @@ post '/login' do
   if @user = User.find_by(name: params[:user][:name])
     @user.authenticate(params[:user][:password])
     session[:id] = @user.id
+    session[:name] ||= @user.name
     redirect "/users/#{@user.id}"
   else
     erb :'users/login'
@@ -24,6 +25,7 @@ post '/users' do
   @user.password=(params[:user][:password])
   if @user.save
     session[:id] = @user.id
+    session[:name] ||= @user.name
     redirect "/users/#{@user.id}"
   else
     erb :'users/new_error'
