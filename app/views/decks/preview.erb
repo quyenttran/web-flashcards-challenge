@@ -1,7 +1,7 @@
 <div class = container>
-   <h1>The <%= current_deck.name %> deck </h1>
-   <h3>has <%= current_deck.cards.count %> cards</h3>
-   <form action="/decks/<%=current_deck.id%>/play/1" method="post">
+   <h1>The <%= Deck.find(session[:deck]).name %> deck </h1>
+   <h3>has <%= Deck.find(session[:deck]).cards.count %> cards</h3>
+   <form action="/decks/<%=session[:deck]%>/play/1" method="get">
    <input type="submit" value="Let's Play">
    </form>
 </div>
