@@ -36,6 +36,8 @@ post '/decks/:id/cards/:id' do
 end
 
 get '/results' do
+  # @card = Card.find(params[:id])
+  @deck = Deck.find(session[:deck_id])
   @user = User.find(session[:id])
   @round = Round.find(session[:round_id])
   erb :"decks/results"
