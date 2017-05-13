@@ -1,3 +1,102 @@
+/* ========== Debugging ========== */
+/** {
+  border: dashed red 1px;
+}*/
+
+/* ========== Resets ========== */
+h1, ul, li {
+  margin: 0;
+  padding: 0;
+}
+a:visited {
+  color: black;
+}
+a {
+  text-decoration: none;
+}
+
+/* ========== Body ========== */
+body {
+  background-color: ghostwhite;
+  font-family: 'Futura';
+}
+
+
+/* ========== Styling Classes ========== */
+.flex-row {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+
+/* ========== Navbar ==========*/
+header {
+  background-color: lightsteelblue;
+  box-shadow: 0px 3px 3px silver;
+  display: flex;
+  font-size: 1.5em;
+  justify-content: space-between;
+  height: 150px;
+  border-bottom: solid 2px black;
+}
+.main-header {
+  display: inline-block;
+  margin-left: 20px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  animation-name: main-header;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  padding: 10px;
+}
+@keyframes main-header {
+  0%    {color: yellow; border: dotted 5px yellow;}
+  25% {color: red; border: dotted 5px red}
+  50%   {color: yellow; border: dotted 5px yellow}
+  75%  {color: red; border: dotted 5px red}
+  100% {color: yellow; border: dotted 5px yellow}
+}
+.navbar, .navbar-ul {
+  height: 100%;
+}
+.navbar-ul {
+  justify-content: space-around;
+}
+.navbar-li {
+  list-style-type: none;
+  margin-right: 30px;
+  letter-spacing: .1em;
+}
+.navbar-link:hover {
+  color: royalblue;
+}
+.logout-btn {
+  background-color: lightsteelblue;
+  border: none;
+  letter-spacing: .1em;
+}
+
+
+/* ========== Main Content ========== */
+.main-wrapper {
+  padding: 50px;
+}
+
+
+/* ========== User Forms ========== */
+.user-form {
+  border: solid 2px black;
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  background-color: lightsteelblue;
+}
+.user-form>input {
+  margin: 15px 0;
+  width: 300px;
+}
+
 table, th, td {
    border: 1px solid black;
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- 
+  <!--
     normalize.css removes cross-browser differences in defaults, e.g.,
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
@@ -15,9 +15,34 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
+  <title>Flashcards</title>
 </head>
+
 <body>
-  <%= yield %>
+  <header>
+    <div class="flex-row">
+      <h1 class="main-header">Flashcards</h1>
+    </div>
+    <nav class="navbar">
+      <ul class="navbar-ul flex-row">
+        <% if session['user_id'] %>
+         <li class="navbar-li"><a class="navbar-link" href="/users/<%= session['user_id'] %>"><%= (User.find_by(id: session['user_id'])).username %></a></li>
+        <li class="navbar-li">
+          <form method="post" action="/users/<%= session['user_id'] %>">
+            <input type="hidden" name="_method" value="delete">
+            <button class="logout-btn navbar-link"><%= "log out" %></button>
+          </form>
+        </li>
+        <% else %>
+        <li class="navbar-li"><a class="navbar-link" href="/users"><%= "register" %></a></li>
+        <li class="navbar-li"><a class="navbar-link" href="/users/login"><%= "login" %></a></li>
+        <% end %>
+        <li class="navbar-li"><a class="navbar-link" href="/">home</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="main-wrapper flex-row">
+    <%= yield %>
+  </div>
 </body>
 </html>

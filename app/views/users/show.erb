@@ -14,7 +14,7 @@
     <% deck.games.each do |game| %>
       <% if game.user == @user %>
           <tr>
-            <td><%= game.created_at.to_date%></td>
+            <td><%= game.created_at.strftime("%B, %d, %Y") %></td>
             <td><%= deck.cards.count %></td>
             <td><%= game.rounds.first.guesses.count - game.rounds.second.guesses.count %></td>
             <td><%= game.rounds.reduce(0){|sum, round| sum + round.guesses.count} %></td>
