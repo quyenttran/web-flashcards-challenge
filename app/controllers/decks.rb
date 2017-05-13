@@ -35,5 +35,8 @@ end
 
 get '/results' do
   @user = User.find(session[:id])
+  @round = Round.find(session[:round_id])
+  
   erb :"decks/results"
 end
+
