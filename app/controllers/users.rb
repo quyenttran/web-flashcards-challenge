@@ -1,14 +1,12 @@
 enable :sessions
 
 get '/login' do
-  puts session.inspect
-  @user = User.new
   erb :'users/login'
 end
 
 post '/login' do
-  @user = User.find_by(name: params[:user][:name])
-  if @user.authenticate(params[:user][:password])
+  if @user = User.find_by(name: params[:user][:name])
+    @user.authenticate(params[:user][:password])
     session[:id] = @user.id
     redirect "/users/#{@user.id}"
   else
