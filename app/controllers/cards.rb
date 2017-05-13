@@ -1,21 +1,7 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> b819500a1472533b186967dbb155fb0b8a25284f
 get '/round/:round_id/card/:card_id' do 
 	puts params
 	@deck = Deck.find(params[:id])
 	@card = Card.find(params[:id])
-<<<<<<< HEAD
-=======
-get '/round/:round_id/card/:card_id' do
-	puts params
-	@deck = Deck.find(1)
-	@card = Card.find(1)
->>>>>>> f5619d65cc1f8ab882e0e8e6fb20b562d4e67c90
-=======
-
->>>>>>> b819500a1472533b186967dbb155fb0b8a25284f
 	erb :'cards/show'
 end
 
