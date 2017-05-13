@@ -33,7 +33,9 @@ end
 get '/users/:id' do
   erb :'users/login' unless session[:id]
   @user = User.find(params[:id])
-  @round = Round.find_or_create_by(user_id: params[:id])
+  @round = Round.find(session[:round_id])
+  @rounds = Round.all
+  puts @rounds
   erb :'users/profile'
 end
 
