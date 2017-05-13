@@ -1,0 +1,25 @@
+<h2><%= @user.username %></h2>
+
+<% decks = @user.games.map{|game| game.deck}.uniq %>
+<% decks.each do |deck| %>
+  <h3><%= deck.name %></h3>
+  <table>
+    <tr>
+      <th>Date</th>
+      <th>Cards in Deck</th>
+      <th>First Guesses Correct</th>
+      <th>Total Guesses</th>
+    </tr>
+
+    <% deck.games.each do |game| %>
+      <% if game.user == @user %>
+          <tr>
+            <td><%= game.created_at.to_date%></td>
+            <td><%= deck.cards.count %></td>
+            <td><%= game.rounds.first.guesses.count - game.rounds.second.guesses.count %></td>
+            <td><%= game.rounds.reduce(0){|sum, round| sum + round.guesses.count} %></td>
+          </tr>
+      <% end %>
+  <% end %>
+  </table>
+<% end %>
