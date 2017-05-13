@@ -58,3 +58,4 @@ end
 
 # Create the first user
 User.create(username: "first_user", password: "password")
+

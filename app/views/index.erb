@@ -1,0 +1,15 @@
+<main>
+  <div id="container">
+    <h1>Flashcard Decks</h1>
+    <ul>
+    <% @decks.each do |deck| %>
+      <li><a href='/game/start'>
+        <%= deck.name.capitalize %>
+      </a></li>
+    <% end %>
+    </ul>
+  </div>
+</main>
+
+
+
