@@ -26,4 +26,8 @@ class Round < ApplicationRecord
    total
   end
 
+  def get_deck
+    self.deck.cards.dup.to_a
+  end
+
 end

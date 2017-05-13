@@ -1,13 +1,11 @@
 get '/games/show' do
   #need to replace deck_id and user_id with dynamic values
-  @game = Game.create(deck_id: 1, user_id: 1)
-  session['game_id'] = @game.id
-  @round = Round.create(game_id: session['game_id'])
-  session['round_id'] = @round.id
-  session['deck_id'] = @game.deck_id
-  session['card_id'] = @game.deck.cards.shuffle.first.id
-  session['deck'] = @game.get_deck
-  session['correct_cards'] = []
+  @round = Round.create(deck_id: 1, user_id: 1)
+  session['deck_id'] = @round.deck_id
+  session['card_id'] = @round.deck.cards.shuffle.first.id
+  session['current_deck'] = @round.get_deck
+  session['correct_deck'] = []
+  session['wrong_deck'] = []
   erb :'/games/show'
 end
 
