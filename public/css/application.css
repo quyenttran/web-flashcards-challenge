@@ -1,3 +1,22 @@
-.stats {
-  border: 1px solid black;
+html {
+  background-color: #91acd8;
+
+}
+
+.deck-name {
+  text-align: center;
+
+}
+
+.profile-stats {
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.stats, th, td {
+    margin: 0 auto;
+    border: 1px solid black;
+}
+th, td {
+  text-align: center;
 }
