@@ -80,7 +80,10 @@ ul {
   float: left;
 }
 
+
 a {
+
+    font-size: 1.3em;
     font-family: 'Poiret One', cursive;
     font-weight: bold;
     display: block;
@@ -90,5 +93,7 @@ a {
 }
 
 li a:hover {
+    font-size: 2em;
     background-color: #6dc0d5;
+    color: #ad7a99;
 }
