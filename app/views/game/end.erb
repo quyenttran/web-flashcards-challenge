@@ -1,0 +1,5 @@
+<div class="round-results">
+  <h1><%= @round.deck.name.split(' ').map{|word|word.capitalize}.join(' ') %> Trivia Results</h1>
+  <br>
+  <p>You've completed a round of <%= @round.deck.name.split(' ').map{|word|word.capitalize}.join(' ') %>. You answered <%= @round.first_round_corrects%> / <%= @round.deck.cards.count %> cards correctly on the first try. You submitted <%= @round.guesses.count %> total guesses before each card was answered correctly.</p>
+</div>

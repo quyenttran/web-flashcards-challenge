@@ -176,4 +176,8 @@ table, th, td {
   width: 100%;
 }
 
-
+/* ========== Round Results Views ========== */
+.round-results {
+  display: block;
+  width: 100%;
+}

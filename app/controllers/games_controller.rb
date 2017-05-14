@@ -20,6 +20,7 @@ end
 get '/game/show' do
   if session[:current_deck].empty?
     # if no more questions in current deck, directs user to status page
+    @round = Round.find(session[:round_id])
     erb :'/game/end'
   else
     @round = Round.find(session[:round_id])
