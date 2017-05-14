@@ -20,40 +20,20 @@ end
 
 # Create inventors flashcard deck
 inventors_deck = Deck.create(name: 'Inventors')
-inventors_keys = [:question, :answer]
-inventors_qs = []
-inventors_as = []
 CSV.foreach('inventors.csv', headers: true) do |row|
-  inventors_qs << row[1]
-  inventors_as << row[0]
-end
-q_a = inventors_qs.zip(inventors_as)
-inventors_cards = []
-q_a.each do |pair|
-  inventors_cards << Hash[inventors_keys.zip(pair)]
-end
-inventors_cards.each do |card|
-  card[:deck_id] = inventors_deck.id
-  Card.create(card)
+  qa_keys = [:question, :answer]
+  qa_hash = Hash[qa_keys.zip([row[1], row[0]])]
+  qa_hash[:deck_id] = inventors_deck.id
+  Card.create(qa_hash)
 end
 
-# Create inventors flashcard deck
+# Create USA Historical Capitals flashcard deck
 usa_historical_capitals_deck = Deck.create(name: 'USA Historical Capitals')
-usa_historical_capitals_keys = [:question, :answer]
-usa_historical_capitals_qs = []
-usa_historical_capitals_as = []
 CSV.foreach('usa_historical_capitals.csv', headers: true) do |row|
-  usa_historical_capitals_qs << row[1]
-  usa_historical_capitals_as << row[0]
-end
-q_a = usa_historical_capitals_qs.zip(usa_historical_capitals_as)
-usa_historical_capitals_cards = []
-q_a.each do |pair|
-  usa_historical_capitals_cards << Hash[usa_historical_capitals_keys.zip(pair)]
-end
-usa_historical_capitals_cards.each do |card|
-  card[:deck_id] = usa_historical_capitals_deck.id
-  Card.create(card)
+  qa_keys = [:question, :answer]
+  qa_hash = Hash[qa_keys.zip([row[1], row[0]])]
+  qa_hash[:deck_id] = usa_historical_capitals_deck.id
+  Card.create(qa_hash)
 end
 
 # Create the first user
