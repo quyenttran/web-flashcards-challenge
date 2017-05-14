@@ -5,7 +5,7 @@ class User < ApplicationRecord
   include BCrypt
   has_many :games
   validates :username, :hashed_password, { presence: true }
-  validates :username, { uniqueness: true, length: { minimum: 3 } }
+  validates :username, { uniqueness: true, length: { minimum: 5 } }
   validate :password_presence
 
   def password

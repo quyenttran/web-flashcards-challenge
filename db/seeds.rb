@@ -43,7 +43,7 @@ raccoon.each do |card|
 end
 
 # Create inventors flashcard deck
-inventors_deck = Deck.create(name: 'inventors')
+inventors_deck = Deck.create(name: 'Inventors')
 inventors_keys = [:question, :answer]
 inventors_qs = []
 inventors_as = []
@@ -62,7 +62,7 @@ inventors_cards.each do |card|
 end
 
 # Create inventors flashcard deck
-usa_historical_capitals_deck = Deck.create(name: 'usa_historical_capitals')
+usa_historical_capitals_deck = Deck.create(name: 'USA Historical Capitals')
 usa_historical_capitals_keys = [:question, :answer]
 usa_historical_capitals_qs = []
 usa_historical_capitals_as = []
@@ -82,3 +82,4 @@ end
 
 # Create the first user
 User.create(username: "first_user", password: "password")
+

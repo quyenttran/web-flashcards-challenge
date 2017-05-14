@@ -1,0 +1,10 @@
+<div class="card">
+  <h1 class="game-header">Flashcard Decks</h1>
+  <ul class="decks-ul">
+  <% @decks.each do |deck| %>
+    <li class="decks-li"><a href='/game/start/<%= deck.id %>'>
+      <%= deck.name.split(' ').each{|word|word.capitalize}.join(' ') %>
+    </a></li>
+  <% end %>
+  </ul>
+</div>

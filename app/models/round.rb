@@ -4,7 +4,6 @@ class Round < ApplicationRecord
   belongs_to :deck
   has_many :guesses
 
-
   # def correct_guesses
   #   count = 0
   #   (self.game.deck.cards.count).times do
@@ -27,4 +26,12 @@ class Round < ApplicationRecord
    total
   end
 
+  def end_of_round?(correct_deck, wrong_deck, deck)
+    return true if correct_deck.length + wrong_deck.length == deck.length
+    false
+  end
+
+  def get_deck_questions
+    self.deck.cards.map { |card| card.question }
+  end
 end

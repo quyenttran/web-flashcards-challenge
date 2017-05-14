@@ -1,8 +1,0 @@
-<h2> <%= @game.deck.name.capitalize %> </h2>
-
-
-<p> You've completed a round of <%= @game.deck.name.capitalize %>. You answered <%= @game.deck.cards.count - @game.rounds.second.deck.cards.count %> / <%=   @game.deck.cards.count  %>
-cards correctly on the first try.</br> You submitted <%= @game.total_guesses %> total guesses before each card was answered correctly.</p>
-
-
-<!-- # <" @first_round.correct_guesses %" >-->

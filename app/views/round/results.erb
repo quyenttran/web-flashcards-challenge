@@ -1,0 +1,8 @@
+<h2> <%= @round.deck.name.capitalize %> </h2>
+
+
+<p> You've completed a round of <%= @round.deck.name.capitalize %>. You answered <%= @round.first_round_corrects %> / <%=   @round.deck.cards.count  %>
+cards correctly on the first try.</br> You submitted <%= @round.guesses.size %> total guesses before each card was answered correctly.</p>
+
+
+<!-- # <" @first_round.correct_guesses %" >-->

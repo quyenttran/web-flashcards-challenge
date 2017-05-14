@@ -1,0 +1,4 @@
+<div class="container">
+  <h1 class="game-header"><%= Deck.find(session[:deck_id]).name.split(' ').each{|word|word.capitalize}.join(' ') %> Trivia</h1>
+  <a href='/game/show'><button class="game-buttons start-continue-button">Start!</button></a>
+</div>
