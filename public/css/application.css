@@ -115,9 +115,6 @@ ul.errors-ul {
 .errors-li {
   margin-bottom: 10px;
 }
-table, th, td {
-   border: 1px solid black;
-}
 
 /* ========== Game Views ========== */
 .decks-ul {
@@ -169,5 +166,14 @@ table, th, td {
   margin-bottom: 20px;
 }
 
+/* ========== User Profile Views ========== */
+table, th, td {
+   border: 1px solid black;
+}
+
+.user-profile {
+  display: block;
+  width: 100%;
+}
 
 
