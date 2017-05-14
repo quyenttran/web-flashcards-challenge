@@ -9,7 +9,7 @@ body {
   text-align: right;
   width: 100%;
   opacity: .98;
-  background: linear-gradient(to right, #16bffd, #cb3066);
+  background: linear-gradient(to right, #2196f3, #f44336);
   color: #FFF;
   padding: 20px;
   display: inline;
@@ -57,6 +57,12 @@ h1 {
 }
 .scoreboard span {
   font-weight: bold;
+}
+#american-flag {
+  background-image: url('https://media.tenor.co/images/c31a86bf3ca0599cc146687d0f56a576/tenor.gif');
+  color: red;
+  font-weight: bold;
+  font-size: 17px;
 }
 .card {
   padding: 1vw;
@@ -109,8 +115,10 @@ h1 {
   overflow:hidden;
   word-break:normal;
   border-color:#aabcfe;
-  color:#669;
-  background:linear-gradient(to right, #2196f3, #f44336);
+  background-image: url('https://media.tenor.co/images/c31a86bf3ca0599cc146687d0f56a576/tenor.gif');
+  color: red;
+  font-weight: bold;
+  font-size: 17px;
 }
 .tg th{
   font-family:Arial, sans-serif;
@@ -122,16 +130,29 @@ h1 {
   overflow:hidden;
   word-break:normal;
   border-color:#aabcfe;
-  color:#039;
-  background:linear-gradient(to right, #2196f3, #f44336);
+  background-image: url('https://media.tenor.co/images/c31a86bf3ca0599cc146687d0f56a576/tenor.gif');
+  color: red;
+  font-weight: bold;
+  font-size: 17px;
 }
 .tg .tg-18qn{
-  background-color:#329a9d;
-  color:#ffffff;
+  background-image: url('https://media.tenor.co/images/c31a86bf3ca0599cc146687d0f56a576/tenor.gif');
+  color: red;
+  font-weight: bold;
+  font-size: 17px;
   vertical-align:top}
-.tg .tg-87ym{background-color:#329a9d;
-  color:#ffffff;
-  vertical-align:top}
-.tg .tg-ixdi{background-color:#329a9d;
-  color:#ffffff;text-align:right;
-  vertical-align:top}
+.tg .tg-87ym{
+  background-image: url('https://media.tenor.co/images/c31a86bf3ca0599cc146687d0f56a576/tenor.gif');
+  color: red;
+  font-weight: bold;
+  font-size: 17px;
+  vertical-align: top;
+}
+.tg .tg-ixdi{
+  background-image: url('https://media.tenor.co/images/c31a86bf3ca0599cc146687d0f56a576/tenor.gif');
+  color: red;
+  font-weight: bold;
+  font-size: 17px;
+  text-align:right;
+  vertical-align:top;
+}
