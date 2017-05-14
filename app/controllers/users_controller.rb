@@ -3,19 +3,17 @@ get '/users' do
   erb :'/users/index'
 end
 
-# New - display form to create new user
-# Not necessary (on index)
-
 # Create - create new user
 post '/users/new' do
   # Create new user with post data
-  @user = User.create(params['user'])
+  user = User.create(params['user'])
   # Log in user
-  if @user.valid?
+  if user.valid?
     session['user_id'] = user.id
     redirect to "/users/#{user.id}"
   else
-    @messages = @user.errors.full_messages
+    @un_messages = user.errors[:username]
+    @pw_messages = user.errors[:password]
     erb :'/users/index'
   end
 end
@@ -27,24 +25,34 @@ end
 
 # Misc: Login(create) -
 post '/users/login' do
-  # Authenticate login
-  if User.authenticate(params['username'], params['password'])
-    # Log in user
-    user = User.find_by(username: params['username'])
-    session['user_id'] = user.id
-    redirect to '/'
+  # Ensure username exists.
+  @un_messages = []
+  @pw_messages = []
+  user = User.find_by(username: params['username'])
+  # Give an error if username or password are blank
+  if params['username'] == ''
+    @un_messages << 'cannot be blank'
+    erb :'/users/login'
+  elsif params['password'] == ''
+    @pw_messages << 'cannot be blank'
+    erb :'/users/login'
+  # Give an error if username doesn't exist in database
+  elsif !user
+    @un_messages << 'does not exist'
+    erb :'/users/login'
   else
-    # Bounce back to login
-    @messages = 'Something went wrong!'
-    redirect to '/users/login'
+  # Else, authenticate login, and give session['user_id'] if authenticated
+    if User.authenticate(params['username'], params['password'])
+      # Log in user
+      session['user_id'] = user.id
+      redirect to '/'
+    else
+      # Give error if password is incorrect
+      @pw_messages << 'is incorrect'
+      erb :'/users/login'
+    end
   end
 end
-
-# Edit
-# Unnecessary
-
-# Update
-# Unnecessary
 
 # Show - display user profile
 get '/users/:id' do
