@@ -36,10 +36,8 @@ get '/users/:id' do
   erb :'users/login' unless session[:id]
   @user = User.find(params[:id])
   @card = Card.find(params[:id])
-  #@round = Round.find(session[:round_id])
   @cards = Card.where(deck_id: @card.deck_id).count
-  @rounds = Round.all
-  puts params
+  @rounds = Round.where(user_id: params[:id])
   erb :'users/profile'
 end
 
@@ -62,7 +60,7 @@ get '/users/:id/entry' do
 end
 
 get '/logout' do
-  session.delete(:id)
+  session.clear
   redirect '/'
 end
 

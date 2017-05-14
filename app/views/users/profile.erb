@@ -1,11 +1,15 @@
-<h1><%= @user.name.split.first %>'s Statistics</h1>
-<a href="/users/<%= @user.id %>/edit">Change Personal Information</a>
-<span class="entry-date block font-3-4 c-lt-gray"><%= "Account created on #{long_form_date(@user.created_at)}" %></span>
-<a href="/cards">Brush Up On Chuck Norris</a>
-<br>
-<img src="http://www.sickchirpse.com/wp-content/uploads/2016/09/Chuck-Norris.jpg" alt="Profile">
-<br>
+<h1><%= @user.name %>'s Profile</h1>
+
+<div class="table">
 <table class="tg">
+  <% if @rounds.empty? %>
+    <tr>
+      <th class="tg-87ym" colspan="5"><h2>GET TO PLAYIN!</h2></td>
+    </tr>
+    <% else %>
+    <tr>
+      <th class="tg-18qn" colspan="5"><h2><%= @user.name.split.first %>'s Statistics</h2></td>
+    </tr>
   <tr>
     <th class="tg-87ym">Date</th>
     <th class="tg-87ym">Deck Name</th>
@@ -15,11 +19,21 @@
   </tr>
   <% @rounds.each do |item| %>
   <tr>
-    <td class="tg-18qn"><%= item.created_at %></td>
+    <td class="tg-18qn"><%= long_form_date(item.created_at) %></td>
     <td class="tg-ixdi"><%= Deck.find(item.deck_id).name %></td>
     <td class="tg-ixdi"><%= @cards %></td>
     <td class="tg-ixdi"><%= item.score %></td>
     <td class="tg-ixdi"><%= item.guess %></td>
   </tr>
   <% end %>
+  <% end %>
 </table>
+</div>
+
+<div class="links">
+<a href="/users/<%= @user.id %>/edit">Change Personal Information</a>
+<span class="entry-date block font-3-4 c-lt-gray"><%= "Account created on #{long_form_date(@user.created_at)}" %></span>
+<a href="/cards">Brush Up On Chuck Norris</a>
+</div>
+
+<img src="http://www.sickchirpse.com/wp-content/uploads/2016/09/Chuck-Norris.jpg"  alt="Profile">
