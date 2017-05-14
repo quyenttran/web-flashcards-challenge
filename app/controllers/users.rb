@@ -37,6 +37,9 @@ get '/users/:id' do
   @user = User.find(params[:id])
   @card = Card.find(params[:id])
   @cards = Card.where(deck_id: @card.deck_id).count
+  puts @card.deck_id
+  puts params
+  puts @cards
   @rounds = Round.where(user_id: params[:id])
   erb :'users/profile'
 end
