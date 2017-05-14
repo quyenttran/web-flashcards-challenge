@@ -8,7 +8,6 @@ post '/login' do
   if @user = User.find_by(name: params[:user][:name])
     @user.authenticate(params[:user][:password])
     session[:id] = @user.id
-    session[:name] ||= @user.name
     redirect "/users/#{@user.id}"
   else
     erb :'users/login'
@@ -25,7 +24,6 @@ post '/users' do
   @user.password=(params[:user][:password])
   if @user.save
     session[:id] = @user.id
-    session[:name] ||= @user.name
     redirect "/users/#{@user.id}"
   else
     erb :'users/new_error'
@@ -52,30 +50,7 @@ put '/users/:id' do
   redirect "/users/#{@user.id}"
 end
 
-get '/users/:id/entry' do
-  @user = User.find(params[:id])
-  erb :'users/login'
-end
-
 get '/logout' do
   session.clear
   redirect '/'
 end
-
-
-
-# get '/users/new' do
-#   @user = User.new
-#   erb :'users/new'
-# end
-
-# post '/users' do
-#   @user = User.create(params[:user])
-#   if @user.valid?
-#     redirect '/login'
-#   else
-#     @errors = @user.errors.full_messages
-#     status 422
-#     erb :'users/new'
-#   end
-# end
