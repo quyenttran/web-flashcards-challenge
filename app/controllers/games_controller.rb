@@ -8,11 +8,11 @@ get '/game/end' do
 end
 
 get '/game/start/:id' do
-  #need to replace user_id with dynamic value
-  @round = Round.create(deck_id: params[:id], user_id: 1)
+  @round = Round.create(deck_id: params[:id], user_id: (session[:user_id] ? session[:user_id] : nil))
   session[:round_id] = @round.id
   session[:current_deck] = @round.get_deck_questions.shuffle
   session[:deck_length] = session[:current_deck].length
+  session[:deck_id] = params[:id]
 
   erb :'game/start'
 end
@@ -20,6 +20,7 @@ end
 get '/game/show' do
   if session[:current_deck].empty?
     # if no more questions in current deck, directs user to status page
+    @round = Round.find(session[:round_id])
     erb :'/game/end'
   else
     @round = Round.find(session[:round_id])
