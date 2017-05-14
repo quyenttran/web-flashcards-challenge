@@ -58,6 +58,12 @@ h1 {
 .scoreboard span {
   font-weight: bold;
 }
+#american-flag {
+  background-image: url('https://media.tenor.co/images/c31a86bf3ca0599cc146687d0f56a576/tenor.gif');
+  color: red;
+  font-weight: bold;
+  font-size: 17px;
+}
 .card {
   padding: 1vw;
   margin: 1vw;
