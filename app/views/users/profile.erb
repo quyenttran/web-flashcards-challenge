@@ -17,13 +17,13 @@
     <th class="tg-87ym">Score</th>
     <th class="tg-87ym">Total Guesses</th>
   </tr>
-  <% @rounds.each do |item| %>
+  <% @rounds.each do |round| %>
   <tr>
-    <td class="tg-18qn"><%= long_form_date(item.created_at) %></td>
-    <td class="tg-ixdi"><%= Deck.find(item.deck_id).name %></td>
-    <td class="tg-ixdi"><%= @cards %></td>
-    <td class="tg-ixdi"><%= item.score %></td>
-    <td class="tg-ixdi"><%= item.guess %></td>
+    <td class="tg-18qn"><%= long_form_date(round.created_at) %></td>
+    <td class="tg-ixdi"><%= Deck.find(round.deck_id).name %></td>
+    <td class="tg-ixdi"><%= Deck.find(round.deck_id).cards.count %></td>
+    <td class="tg-ixdi"><%= round.score %></td>
+    <td class="tg-ixdi"><%= round.guess %></td>
   </tr>
   <% end %>
   <% end %>

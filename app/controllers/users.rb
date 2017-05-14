@@ -35,8 +35,6 @@ end
 get '/users/:id' do
   erb :'users/login' unless session[:id]
   @user = User.find(params[:id])
-  @card = Card.find(params[:id])
-  @cards = Card.where(deck_id: @card.deck_id).count
   @rounds = Round.where(user_id: params[:id])
   erb :'users/profile'
 end
