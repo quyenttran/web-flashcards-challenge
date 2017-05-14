@@ -1,4 +1,7 @@
-<div class="card success-fail">
-  <p class="flashcard-qa">Wrong! The answer is <%= @card.answer %>.</p>
-  <a class="game-buttons" href='/game/show'>Continue</a>
+<div class="container">
+  <h1 class="game-header"><%= Deck.find(session[:deck_id]).name.split(' ').each{|word|word.capitalize}.join(' ') %> Trivia</h1>
+  <div class="card success-fail">
+    <p class="flashcard-qa">Wrong! The answer is <%= @card.answer %>.</p>
+    <a class="game-buttons" href='/game/show'>Continue</a>
+  </div>
 </div>

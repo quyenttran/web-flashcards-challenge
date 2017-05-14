@@ -3,7 +3,7 @@
   <ul class="decks-ul">
   <% @decks.each do |deck| %>
     <li class="decks-li"><a href='/game/start/<%= deck.id %>'>
-      <%= deck.name.capitalize %>
+      <%= deck.name.split(' ').each{|word|word.capitalize}.join(' ') %>
     </a></li>
   <% end %>
   </ul>
