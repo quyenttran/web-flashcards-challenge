@@ -97,6 +97,11 @@ header {
 .main-wrapper {
   padding: 50px;
 }
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 
 /* ========== Login and Registration Views ========== */
