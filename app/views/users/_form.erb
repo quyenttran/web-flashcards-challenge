@@ -7,17 +7,17 @@
 
   <div class="fieldset">
     <label for="name_input">Username:</label>
-    <input type="text" name="user[name]" placeholder="*<%= user.try(:name) %>*">
+    <input type="text" name="user[name]" value="*<%= user.try(:name) %>*">
   </div>
 
   <div class="fieldset">
     <label for="email_input">Email:</label>
-    <input type="text" name="user[email]" placeholder="*<%= user.try(:email) %>*">
+    <input type="text" name="user[email]" value="*<%= user.try(:email) %>*">
   </div>
 
   <div class="fieldset">
     <label for="password_input">Password:</label>
-    <input type="text" name="user[password]" placeholder"************">
+    <input type="text" name="user[password]" value"************">
   </div>
 
   <input type="submit" value="submit">
