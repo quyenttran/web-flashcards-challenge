@@ -1,6 +1,7 @@
 <h1><%= @deck.name %></h1>
 <% if logged_in? %>
- <p><a href="/decks/<%= @deck.id %>/cards/<%= @card.id %>">Start Round!</a></p>
+<div class="card"> <p><a href="/decks/<%= @deck.id %>/cards/<%= @card.id %>">Start Round!</a></p> </div>
+
  <img src="https://static.comicvine.com/uploads/original/3/31265/1550715-chuck_norris_2.jpg" alt="Start">
  <% else %>
  <p>"Login or Register. I aint askin"</p>

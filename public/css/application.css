@@ -9,7 +9,7 @@ body {
   text-align: right;
   width: 100%;
   opacity: .98;
-  background: linear-gradient(to bottom right, #00BCD4, #4CAF50);
+  background: linear-gradient(to right, #2196f3, #f44336);
   color: #FFF;
   padding: 20px;
   display: inline;
@@ -71,9 +71,67 @@ h1 {
   vertical-align: middle;
   line-height: 24px;
 }
-.tg  {border-collapse:collapse;border-spacing:0;border-color:#aabcfe;}
-.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#aabcfe;color:#669;background-color:#e8edff;}
-.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#aabcfe;color:#039;background-color:#b9c9fe;}
-.tg .tg-18qn{background-color:#329a9d;color:#ffffff;vertical-align:top}
-.tg .tg-87ym{background-color:#329a9d;color:#ffffff;vertical-align:top}
-.tg .tg-ixdi{background-color:#329a9d;color:#ffffff;text-align:right;vertical-align:top}
+.links{
+  padding: 1vw;
+  margin: 1vw;
+  width: 25%;
+  height: 70px;
+  border: 3px solid #ECEFF1;
+  border-radius: 4px;
+  float: right;
+  position: absolute;
+  bottom:0;
+  right:0;
+  text-align: center;
+  vertical-align: right;
+  line-height: 24px;}
+.table{
+  padding: 1vw;
+  margin: 1vw;
+  width: 25%;
+  height: 70px;
+  float: right;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 24px;
+}
+.tg  {
+  border-collapse:collapse;
+  border-spacing:0;
+  border-color:#aabcfe;
+}
+.tg td{
+  font-family:Arial, sans-serif;
+  font-size:14px;padding:10px 5px;
+  border-style:solid;
+  border-width:1px;
+  overflow:hidden;
+  word-break:normal;
+  border-color:#aabcfe;
+  color:#669;
+  background:linear-gradient(to right, #2196f3, #f44336);
+}
+.tg th{
+  font-family:Arial, sans-serif;
+  font-size:14px;
+  font-weight:normal;
+  padding:10px 5px;
+  border-style:solid;
+  border-width:1px;
+  overflow:hidden;
+  word-break:normal;
+  border-color:#aabcfe;
+  color:#039;
+  background:linear-gradient(to right, #2196f3, #f44336);
+}
+.tg .tg-18qn{
+  background-color:#329a9d;
+  color:#ffffff;
+  vertical-align:top}
+.tg .tg-87ym{background-color:#329a9d;
+  color:#ffffff;
+  vertical-align:top}
+.tg .tg-ixdi{background-color:#329a9d;
+  color:#ffffff;text-align:right;
+  vertical-align:top}
