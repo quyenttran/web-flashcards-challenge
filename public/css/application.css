@@ -96,7 +96,13 @@ header {
   margin: 15px 0;
   width: 300px;
 }
-
+ul.errors-ul {
+  color: red;
+  list-style-type: none;
+}
+.errors-li {
+  margin-bottom: 10px;
+}
 table, th, td {
    border: 1px solid black;
 }

@@ -1,11 +1,28 @@
-<!-- Display any errors -->
-
-
 <!-- Login form -->
 <form class="user-form" action="/users/login" method="post">
   <label>Username</label>
   <input type="text" name="username">
+    <!-- If username errors have been generated on login attempt, display them. -->
+    <ul class="errors-ul">
+    <% if @un_messages %>
+      <% @un_messages.each do |message| %>
+      <li class="errors-li">
+        <%= "Username #{message}" %>
+        <% end %>
+      </li>
+    <% end %>
+    </ul>
   <label>Password</label>
   <input type="password" name="password">
+  <!-- If password errors have been generated on login attempt, display them. -->
+    <ul class="errors-ul">
+    <% if @pw_messages %>
+      <% @pw_messages.each do |message| %>
+      <li class="errors-li">
+        <%= "Password #{message}" %>
+        <% end %>
+      </li>
+    <% end %>
+    </ul>
   <button type="submit">Log In</button>
 </form>
