@@ -3,7 +3,7 @@ require 'csv'
 
 
 # Create nighthawks flashcard deck
-deck = Deck.create(name: 'nighthawks')
+deck = Deck.create(name: 'Nighthawks')
 nighthawk = [{ question: "What is a nighthawk's primary food source?",
 answer: "insects", deck_id: deck.id},
 {question: "True or false?  Nighthawks are closely related to hawks.",
@@ -19,7 +19,7 @@ nighthawk.each do |card|
 end
 
 # Create inventors flashcard deck
-inventors_deck = Deck.create(name: 'inventors')
+inventors_deck = Deck.create(name: 'Inventors')
 inventors_keys = [:question, :answer]
 inventors_qs = []
 inventors_as = []
@@ -38,7 +38,7 @@ inventors_cards.each do |card|
 end
 
 # Create inventors flashcard deck
-usa_historical_capitals_deck = Deck.create(name: 'usa_historical_capitals')
+usa_historical_capitals_deck = Deck.create(name: 'USA Historical Capitals')
 usa_historical_capitals_keys = [:question, :answer]
 usa_historical_capitals_qs = []
 usa_historical_capitals_as = []
