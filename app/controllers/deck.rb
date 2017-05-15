@@ -20,6 +20,7 @@ post '/decks/:id/play/:card_id' do
       new_first_try_total = Round.find(session[:round]).first_tries + 1
       Round.find(session[:round]).update_attribute(:first_tries, new_first_try_total)
     end
+
   else
     Guess.create(card_id: params[:card_id], round_id: session[:round])
   end
@@ -47,8 +48,10 @@ get "/decks/new/:id" do
   erb :'cards/new'
 end
 
+
 post "/decks/new/:id" do
   @deck = Deck.find(params[:id])
   Card.create(question: params[:question],answer: params[:answer],deck_id: params[:id])
   erb :'cards/new'
+
 end
