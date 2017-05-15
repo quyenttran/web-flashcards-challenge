@@ -1,0 +1,8 @@
+<div>
+  <ul>
+    <li><%= Deck.find(session[:deck]).name %> Deck</li>
+    <li>First tries: <%= Round.find(session[:round]).first_tries %></li>
+    <li>Number of cards: <%= Deck.find(session[:deck]).cards.count %></li>
+    <li>Total guesses: <%= Round.find(session[:round]).total_guesses %></li>
+  </ul>
+</div>
