@@ -7,7 +7,8 @@
     See: http://necolas.github.com/normalize.css/
   -->
   <link rel="stylesheet" href="/css/normalize.css">
-  <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <!--
     application.css is where you put your styles
   -->
@@ -15,6 +16,7 @@
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
   <title></title>
 </head>
@@ -27,5 +29,13 @@
   <% end %>
   <h1 id="layout-flashcards"> Flashcards </h1>
   <%= yield %>
+
+  <div id="footer">
+           <div class="wrap">
+                <p>All flashcards are official pretty much complete nonsense.</br>
+                This site is licensed by Mendel's Riders (Erik, Mendel, and Paul)</br>
+                Shout out to Erik and Paul the true MVP's</p>
+           </div>
+      </div>
 </body>
 </html>

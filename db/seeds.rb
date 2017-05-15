@@ -1,6 +1,8 @@
 
 Deck.create(name: "raccoon")
 Deck.create(name: "otter")
+Deck.create(name: "emojis")
+Deck.create(name: "Mendel's Riders")
 
 Card.create(
   question: "What is a nighthawk's primary food source?",
@@ -87,4 +89,3 @@ Round.create(
   first_tries: 3,
   total_guesses: 20
   )
-

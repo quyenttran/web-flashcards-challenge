@@ -4,9 +4,10 @@
 
 
 <% @user.decks_played.distinct.each do |deck| %>
-<div class="profile-stats">
+<body>
+<div class="jumbotron">
   <% @rounds_for_deck = deck.rounds.where(user_id: session[:id], deck_id: deck.id) %>
-  <h2 class="deck-name"><%= deck.name.upcase %></h2>
+  <h2 class="deck-name"><%= deck.name.capitalize %></h2> </br>
   <table class="stats">
     <tr>
       <th>Date</th>
@@ -23,5 +24,6 @@
     </tr>
       <% end %>
   </table>
+</body>
 </div>
 <% end %>
