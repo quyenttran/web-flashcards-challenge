@@ -7,6 +7,7 @@
     See: http://necolas.github.com/normalize.css/
   -->
   <link rel="stylesheet" href="/css/normalize.css">
+  <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
   <!--
     application.css is where you put your styles
   -->
@@ -18,13 +19,13 @@
   <title></title>
 </head>
 <body>
-<h1> Flashcards </h1>
   <% if logged_in? %>
   <%= erb :'_navin' %>
   <% else %>
   <% session.delete(:id) %>
   <%= erb :'_navout' %>
   <% end %>
+  <h1 id="layout-flashcards"> Flashcards </h1>
   <%= yield %>
 </body>
 </html>

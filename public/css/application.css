@@ -1,11 +1,11 @@
 html {
-  background-color: #91acd8;
+  background-color: #AD7A99;
 
 }
 
 .deck-name {
   text-align: center;
-
+  font-family: 'Poiret One', cursive;
 }
 
 .profile-stats {
@@ -19,4 +19,81 @@ html {
 }
 th, td {
   text-align: center;
+  padding: 5px;
+}
+
+th {
+  background-color: #6dc0d5;
+}
+
+tr:nth-child(odd) {
+  background: #8cdfd6;
+}
+
+tr:nth-child(even) {
+  background: #b2cede;
+}
+
+.deck-name {
+  margin-bottom: 2px;
+}
+
+#profile-username {
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  color: #0ceba5;
+  font-family: 'Poiret One', cursive;
+  text-align: center;
+  background: #5a716a;
+  padding: 0px;
+  margin-top: 0;
+}
+
+#layout-flashcards {
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  color: #0ceba5;
+  text-align: center;
+  font-family: 'Poiret One', cursive;
+  font-size: 4em;
+  background: #5a716a;
+  margin: 0;
+  padding-top: 10px;
+}
+
+nav {
+  background: #5a716a;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links {
+      list-style-type: none;
+
+    overflow: hidden;
+  background: #5a716a;
+}
+
+.nav-li {
+  float: left;
+}
+
+
+a {
+
+    font-size: 1.3em;
+    font-family: 'Poiret One', cursive;
+    font-weight: bold;
+    display: block;
+    padding: 8px;
+    background-color: #b2cede;
+    text-decoration: none;
+}
+
+li a:hover {
+    font-size: 2em;
+    background-color: #6dc0d5;
+    color: #ad7a99;
 }

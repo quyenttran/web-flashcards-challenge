@@ -1,0 +1,4 @@
+<% if Guess.last.correct == 0 %>
+<h1>Incorrect! Correct answer was <%= Card.find(session[:card]).answer %></h1>
+<% else %>
+<h1>Correct!</h1>

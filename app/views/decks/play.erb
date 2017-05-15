@@ -1,12 +1,9 @@
 <div>
-  <h2><%=@deck.name%></h2>
+  <h2><%=Deck.find(session[:deck]).name%></h2>
   <h4><%=@card.question%></h4>
-  <form action="/decks/<%=@deck.id%>/play/<%=@card.id.to_i + 1%>" method="get">
+  <form action="/decks/<%=session[:deck]%>/play/<%=@card.id%>" method="post">
     Enter your guess here:
     <input type="text" name="answer">
-    <input type="hidden" name="round_id" value=<%= "#{@current_round.id}" %>>
     <input type="submit" name="submit">
   </form>
-
-
 </div>
