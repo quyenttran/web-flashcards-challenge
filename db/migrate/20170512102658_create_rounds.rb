@@ -5,7 +5,7 @@ class CreateRounds < ActiveRecord::Migration[5.0]
       t.integer :deck_id, null: false
       t.integer :complete, null: false, default: 0
       t.integer :first_tries, default: 0
-      t.integer :total_guesses
+      t.integer :total_guesses, default: 0
 
       t.timestamps(null: false)
     end
