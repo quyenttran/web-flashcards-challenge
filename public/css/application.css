@@ -4,7 +4,7 @@
 }*/
 
 /* ========== Resets ========== */
-h1, ul, li, label, input, p {
+h1, h2, ul, li, label, input, p {
   margin: 0;
   padding: 0;
 }
@@ -42,6 +42,7 @@ a:hover {
   border: solid 2px black;
   display: flex;
   flex-direction: column;
+  max-width: 960px;
   padding: 50px;
 }
 
@@ -170,7 +171,13 @@ ul.errors-ul {
 table, th, td {
    border: 1px solid black;
 }
-
+.user-stats-table {
+  border: 3px solid black;
+}
+.user-stats-tcell {
+  padding: 10px;
+  text-align: center;
+}
 .user-profile {
   display: block;
   width: 100%;
@@ -179,5 +186,4 @@ table, th, td {
 /* ========== Round Results Views ========== */
 .round-results {
   display: block;
-  width: 100%;
 }
