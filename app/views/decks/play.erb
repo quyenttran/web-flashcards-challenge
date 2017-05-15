@@ -1,9 +1,9 @@
 <div>
-  <h2><%=Deck.find(session[:deck]).name%></h2>
+  <h2><%=Deck.find(session[:deck]).name.capitalize%></h2>
   <h4><%=@card.question%></h4>
   <form action="/decks/<%=session[:deck]%>/play/<%=@card.id%>" method="post">
     Enter your guess here:
-    <input type="text" name="answer">
-    <input type="submit" name="submit">
+    <input type="text" name="answer"> </br> </br>
+    <button type="submit" class="btn btn-default">Submit Answer!</button> <img src="https://cdn.discordapp.com/emojis/293616166838992896.png" alt="hmmmm..." ;" width="32" height="32" >
   </form>
 </div>

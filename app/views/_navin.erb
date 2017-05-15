@@ -2,9 +2,7 @@
 <% @user = User.find(session[:id]) %>
   <ul class="nav-links">
     <li class="nav-li"><a href="/users/<%= @user.id %>/profile"><%=@user.username%></a></li>
-    <li class="nav-li"><a href="/users/logout">logout</a></li>
-    <li class="nav-li"><a href="/">home</a></li>
+    <li class="nav-li"><a href="/users/logout">Logout</a></li>
+    <li class="nav-li"><a href="/">Home</a></li>
   </ul>
 </nav>
-
-

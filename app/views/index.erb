@@ -1,11 +1,11 @@
 <div>
   <% if !logged_in? %>
-    <h2> Sign Up or Log In to play flashcards! </h2>
+    <h2> Sign Up or Log In to Play Flashcards! </h2>
   <% end %>
 
-  <ul>
+  <ul class=container container-table>
     <% @decks.each do |deck| %>
-      <li><a href="/decks/<%=deck.id%>/preview"><%= deck.name %></a> </li>
+      <li><a href="/decks/<%=deck.id%>/preview"><%= deck.name.capitalize %></a> </li>
     <% end %>
   </ul>
 </div>

@@ -1,11 +1,14 @@
 html {
-  background-color: #AD7A99;
+  background-color: grey;
+  text-align: center;
+}
 
+body {
+  min-height: 100%;
 }
 
 .deck-name {
   text-align: center;
-  font-family: 'Poiret One', cursive;
 }
 
 .profile-stats {
@@ -23,44 +26,47 @@ th, td {
 }
 
 th {
-  background-color: #6dc0d5;
+  background-color: #0ceba5;
 }
 
 tr:nth-child(odd) {
-  background: #8cdfd6;
+  background: white;
 }
 
 tr:nth-child(even) {
-  background: #b2cede;
+  background: #0e2c5e;
+  color: white;
 }
 
 .deck-name {
   margin-bottom: 2px;
 }
 
+form {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
 #profile-username {
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
   color: #0ceba5;
-  font-family: 'Poiret One', cursive;
   text-align: center;
-  background: #5a716a;
+  background: #0e2c5e;
   padding: 0px;
   margin-top: 0;
 }
 
 #layout-flashcards {
-  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
-  color: #0ceba5;
+  text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
+  color: white;
   text-align: center;
-  font-family: 'Poiret One', cursive;
   font-size: 4em;
-  background: #5a716a;
+  background: #0e2c5e;
   margin: 0;
   padding-top: 10px;
 }
 
 nav {
-  background: #5a716a;
+  background: white;
 }
 
 ul {
@@ -73,27 +79,52 @@ ul {
       list-style-type: none;
 
     overflow: hidden;
-  background: #5a716a;
+  background: #0e2c5e;
 }
 
 .nav-li {
-  float: left;
+  float: right;
 }
 
+.deck_list {
+  max-width: 100%;
+}
 
 a {
-
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    max-width: 100%;
     font-size: 1.3em;
-    font-family: 'Poiret One', cursive;
     font-weight: bold;
     display: block;
     padding: 8px;
-    background-color: #b2cede;
+    background-color: #a2d5d8;
+    color: white;
     text-decoration: none;
 }
 
 li a:hover {
-    font-size: 2em;
-    background-color: #6dc0d5;
-    color: #ad7a99;
+    background-color: white;
+    color: black;
 }
+
+.wrap {
+		position:relative;
+		margin:0 auto;
+               /*replace 900px with your width*/
+		width:900px;
+	}
+
+	#header, #footer {
+		width:100%;
+		float:left;
+
+	}
+
+  #footer {
+		position:fixed;
+		bottom:0;
+		z-index:999999;
+    padding: 10px;
+    font-size: 12px;
+    background: white;
+	}
