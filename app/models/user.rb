@@ -3,7 +3,7 @@ require 'bcrypt'
 class User < ApplicationRecord
   # Remember to create a migration!
   include BCrypt
-  has_many :games
+  has_many :rounds
   validates :username, :hashed_password, { presence: true }
   validates :username, { uniqueness: true, length: { minimum: 5 } }
   validate :password_presence

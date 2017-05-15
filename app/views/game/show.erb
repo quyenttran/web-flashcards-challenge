@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="game-header"><%= Deck.find(session[:deck_id]).name.split(' ').each{|word|word.capitalize}.join(' ') %> Trivia</h1>
+  <h1 class="game-header"><%= Deck.find(session[:deck_id]).name.split(' ').map{|word|word.capitalize}.join(' ') %> Trivia</h1>
   <div class="card flashcard-wrapper">
   <p class="flashcard-qa"><%= session[:question] %></p>
     <p class="flashcard-prompt">Enter your guess:</p>

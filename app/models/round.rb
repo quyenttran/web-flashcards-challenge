@@ -34,4 +34,8 @@ class Round < ApplicationRecord
   def get_deck_questions
     self.deck.cards.map { |card| card.question }
   end
+
+  def get_deck_questions_ids
+    self.deck.cards.map { |card| card.id}
+  end
 end
