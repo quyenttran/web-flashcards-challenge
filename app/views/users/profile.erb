@@ -1,5 +1,6 @@
 <h1 id="profile-username"><%= @user.username.capitalize %> Statistics</h1>
 <% @users_round = @user.rounds %>
+<a href="/decks/new">Create A Deck</a>
 
 
 <% @user.decks_played.distinct.each do |deck| %>
